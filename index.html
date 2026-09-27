@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gravity Flip Runner</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div class="title-wrap">
+          <div class="title-badge">GF</div>
+          <h1>Gravity Flip Runner</h1>
+        </div>
+
+        <div class="toolbar">
+          <button id="musicToggle" class="tool-button" type="button">Music: On</button>
+          <button id="soundToggle" class="tool-button" type="button">Sound: On</button>
+          <button id="pauseButton" class="tool-button primary" type="button">Pause</button>
+        </div>
+      </header>
+
+      <section class="hud" aria-label="Game HUD">
+        <div class="hud-card score">
+          <span>Score</span>
+          <strong id="scoreValue">0</strong>
+        </div>
+        <div class="hud-card">
+          <span>High Score</span>
+          <strong id="highScoreValue">0</strong>
+        </div>
+        <div class="hud-card">
+          <span>Coins</span>
+          <strong id="coinValue">0</strong>
+        </div>
+        <div class="hud-card">
+          <span>Gravity</span>
+          <strong id="gravityValue">Ground</strong>
+        </div>
+      </section>
+
+      <div class="powerup-row" id="powerupRow" aria-live="polite"></div>
+
+      <main class="game-area" id="gameArea">
+        <canvas id="gameCanvas" width="960" height="540" aria-label="Gravity Flip Runner game canvas"></canvas>
+
+        <div id="startOverlay" class="overlay visible">
+          <div class="panel start-panel">
+            <p class="eyebrow">Neon endless runner</p>
+            <h2>Gravity Flip Runner</h2>
+            <p>
+              Switch gravity, dodge spikes, collect coins, and survive the cyber city rush.
+            </p>
+            <button id="playButton" class="primary-button" type="button">Play</button>
+          </div>
+        </div>
+
+        <div id="countdownOverlay" class="overlay hidden">
+          <div class="countdown-panel">
+            <span id="countdownText">3</span>
+          </div>
+        </div>
+
+        <div id="pauseOverlay" class="overlay hidden">
+          <div class="panel">
+            <h2>Paused</h2>
+            <button id="resumeButton" class="primary-button" type="button">Resume</button>
+          </div>
+        </div>
+
+        <div id="gameOverOverlay" class="overlay hidden">
+          <div class="panel">
+            <p class="eyebrow">Run ended</p>
+            <h2>Game Over</h2>
+            <p>Final Score: <span id="finalScore">0</span></p>
+            <p>Best Score: <span id="bestScore">0</span></p>
+            <button id="restartButton" class="primary-button" type="button">Restart</button>
+          </div>
+        </div>
+      </main>
+
+      <div class="mobile-controls">
+        <button id="flipButton" class="flip-button" type="button">Flip Gravity</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
